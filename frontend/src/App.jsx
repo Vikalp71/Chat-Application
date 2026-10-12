@@ -14,11 +14,7 @@ const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, loading } = useAuth();
 
   if (loading) {
-    return (
-      <div className="app-loader">
-        Loading ChatFlow...
-      </div>
-    );
+    return null;
   }
 
   if (!isAuthenticated) {
@@ -32,11 +28,7 @@ const PublicRoute = ({ children }) => {
   const { isAuthenticated, loading } = useAuth();
 
   if (loading) {
-    return (
-      <div className="app-loader">
-        Loading...
-      </div>
-    );
+    return null;
   }
 
   if (isAuthenticated) {

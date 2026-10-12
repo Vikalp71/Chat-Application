@@ -252,12 +252,7 @@ function Chat() {
       />
 
       <main className="chat-main">
-        {loadingConversations ? (
-          <div className="chat-loading">
-            Loading conversations...
-          </div>
-        ) : selectedConversation &&
-          activeUser ? (
+        {selectedConversation && activeUser ? (
           <>
             <ChatHeader user={activeUser} />
 
