@@ -101,7 +101,7 @@ function Sidebar({
           <img
             src={
               user?.avatar ||
-              "https://i.pravatar.cc/150?img=12"
+              "https://ui-avatars.com/api/?name=My+Profile&background=E2E8F0&color=1F2937"
             }
             alt={user?.name || "Profile"}
             className="profile-avatar"
@@ -195,7 +195,9 @@ function Sidebar({
                   <img
                     src={
                       searchUser.avatar ||
-                      "https://i.pravatar.cc/150?img=12"
+                      "https://ui-avatars.com/api/?name=" +
+                        encodeURIComponent(searchUser.name || searchUser.username || "User") +
+                        "&background=E2E8F0&color=1F2937"
                     }
                     alt={searchUser.name}
                     className="profile-avatar"

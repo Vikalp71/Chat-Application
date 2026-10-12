@@ -80,12 +80,14 @@ export const AuthProvider = ({ children }) => {
     email,
     password,
     username,
+    avatar,
   }) => {
     const response = await api.post("/auth/register", {
       name,
       email,
       password,
       username,
+      avatar,
     });
 
     const { token, user } = response.data;

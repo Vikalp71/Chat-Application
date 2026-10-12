@@ -13,8 +13,17 @@ function ChatHeader({ user }) {
 
         <div className="chat-avatar-wrapper">
           <img
-            src={user.avatar}
-            alt={user.name}
+            src={
+              user?.avatar ||
+              "https://ui-avatars.com/api/?name=" +
+                encodeURIComponent(
+                  user?.name ||
+                    user?.username ||
+                    "User"
+                ) +
+                "&background=E2E8F0&color=1F2937"
+            }
+            alt={user?.name || "User"}
             className="chat-avatar"
           />
 

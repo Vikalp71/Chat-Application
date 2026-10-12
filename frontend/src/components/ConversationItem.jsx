@@ -14,7 +14,16 @@ function ConversationItem({
     >
       <div className="avatar-wrapper">
         <img
-          src={conversation.avatar}
+          src={
+            conversation.avatar ||
+            "https://ui-avatars.com/api/?name=" +
+              encodeURIComponent(
+                conversation.name ||
+                  conversation.username ||
+                  "User"
+              ) +
+              "&background=E2E8F0&color=1F2937"
+          }
           alt={conversation.name}
           className="conversation-avatar"
         />
