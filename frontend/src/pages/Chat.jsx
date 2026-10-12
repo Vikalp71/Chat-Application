@@ -221,8 +221,8 @@ function Chat() {
         text: cleanText,
       });
 
-      // Refresh sidebar preview
-      await fetchConversations();
+      // Message is updated in real time via socket; avoid re-fetching
+      // the whole conversation list here because it triggers the loading state.
     } catch (err) {
       console.error(
         "Send message failed:",
